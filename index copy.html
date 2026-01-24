@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>poofcakes</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,12 +71,14 @@
         .snowflake {
             position: absolute;
             top: -10px;
+            color: white;
             font-size: 1em;
             font-family: Arial, sans-serif;
             text-shadow: 
-                0 0 3px rgba(255, 255, 255, 0.5),
-                0 0 6px rgba(255, 182, 193, 0.3);
+                2px 2px 0px #FFB6C1,
+                0 0 5px rgba(255, 255, 255, 0.8);
             animation: fall linear infinite;
+            opacity: 0.9;
         }
 
         @keyframes fall {
@@ -92,7 +93,7 @@
             right: 20px;
             z-index: 1001;
             background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%);
-            border: 4px solid #FFC0CB;
+            border: 4px solid #FFFFFF;
             color: #8B4A6B;
             border-radius: 20px;
             padding: 12px 24px;
@@ -104,8 +105,9 @@
             align-items: center;
             gap: 8px;
             box-shadow: 
-                0 4px 0px #DDA0DD,
-                0 8px 0px #B0E0E6,
+                0 3px 0px #FFB6C1,
+                0 6px 0px #DDA0DD,
+                0 9px 0px #B0E0E6,
                 0 12px 15px rgba(255, 182, 193, 0.4);
             text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
         }
@@ -119,9 +121,10 @@
             background: linear-gradient(135deg, #FFC0CB 0%, #FFD1DC 100%);
             transform: translateY(-3px);
             box-shadow: 
-                0 6px 0px #DDA0DD,
-                0 10px 0px #B0E0E6,
-                0 14px 20px rgba(255, 182, 193, 0.5);
+                0 4px 0px #FFB6C1,
+                0 8px 0px #DDA0DD,
+                0 12px 0px #B0E0E6,
+                0 16px 20px rgba(255, 182, 193, 0.5);
         }
 
         .snow-toggle:active {
@@ -152,9 +155,9 @@
             margin-bottom: 10px;
             text-shadow: 
                 3px 3px 0px #FFB6C1,
-                6px 6px 0px #DDA0DD,
-                9px 9px 0px #B0E0E6,
-                12px 12px 10px rgba(255, 182, 193, 0.3);
+                5px 5px 0px #FFC0CB,
+                7px 7px 0px #FFD1DC,
+                9px 9px 10px rgba(0, 0, 0, 0.2);
             animation: bounce 2s ease-in-out infinite;
             color: #FFFFFF;
             letter-spacing: 2px;
@@ -179,6 +182,11 @@
             vertical-align: middle;
             max-width: 80px;
             height: auto;
+            box-shadow: 
+                3px 3px 0px #FFB6C1,
+                6px 6px 0px #DDA0DD,
+                9px 9px 0px #B0E0E6,
+                12px 12px 15px rgba(255, 182, 193, 0.3);
             animation: float 3s ease-in-out infinite;
             margin-left: 15px;
         }
@@ -208,10 +216,11 @@
             transition: all 0.3s ease;
             font-size: 0.95rem;
             font-weight: 700;
-            border: 4px solid #FFC0CB;
+            border: 4px solid #FFFFFF;
             box-shadow: 
-                0 4px 0px #DDA0DD,
-                0 8px 0px #B0E0E6,
+                0 3px 0px #FFB6C1,
+                0 6px 0px #DDA0DD,
+                0 9px 0px #B0E0E6,
                 0 12px 15px rgba(255, 182, 193, 0.4);
             text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
             color: #8B4A6B;
@@ -238,9 +247,10 @@
             background: linear-gradient(135deg, #FFC0CB 0%, #FFD1DC 100%);
             transform: translateY(-3px);
             box-shadow: 
-                0 6px 0px #DDA0DD,
-                0 10px 0px #B0E0E6,
-                0 14px 20px rgba(255, 182, 193, 0.6);
+                0 4px 0px #FFB6C1,
+                0 8px 0px #DDA0DD,
+                0 12px 0px #B0E0E6,
+                0 16px 20px rgba(255, 182, 193, 0.6);
         }
 
         .social-link:active {
@@ -258,14 +268,13 @@
             background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
             border-radius: 25px;
             padding: 40px;
+            box-shadow: 
+                0 8px 0px #FFB6C1,
+                0 12px 30px rgba(255, 182, 193, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
             border: 5px solid #FFC0CB;
-            box-shadow: 
-                0 8px 0px #DDA0DD,
-                0 16px 0px #B0E0E6,
-                0 24px 30px rgba(255, 182, 193, 0.3);
         }
 
         .project-card::before {
@@ -286,9 +295,10 @@
         .project-card:hover {
             transform: translateY(-8px);
             box-shadow: 
-                0 12px 0px #DDA0DD,
-                0 20px 0px #B0E0E6,
-                0 28px 40px rgba(255, 182, 193, 0.4);
+                0 8px 0px #FFB6C1,
+                0 16px 0px #DDA0DD,
+                0 24px 0px #B0E0E6,
+                0 32px 40px rgba(255, 182, 193, 0.4);
         }
 
         .project-card.hiatus {
@@ -307,7 +317,10 @@
             font-size: 0.85rem;
             font-weight: 700;
             border: 3px solid #FFFFFF;
-            box-shadow: 0 3px 0px #FF6B9D;
+            box-shadow: 
+                0 2px 0px #FFB6C1,
+                0 4px 0px #DDA0DD,
+                0 6px 0px #B0E0E6;
             text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
         }
 
@@ -341,10 +354,11 @@
             font-weight: 700;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 
-                0 5px 0px #DDA0DD,
-                0 10px 0px #B0E0E6,
-                0 15px 20px rgba(255, 182, 193, 0.4);
-            border: 3px solid #FFC0CB;
+                0 4px 0px #FFB6C1,
+                0 8px 0px #DDA0DD,
+                0 12px 0px #B0E0E6,
+                0 16px 20px rgba(255, 182, 193, 0.4);
+            border: 3px solid #FFFFFF;
             text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
         }
 
@@ -356,9 +370,10 @@
         .project-link:hover {
             transform: translateY(-2px);
             box-shadow: 
-                0 7px 0px #DDA0DD,
-                0 12px 0px #B0E0E6,
-                0 17px 25px rgba(255, 182, 193, 0.6);
+                0 5px 0px #FFB6C1,
+                0 10px 0px #DDA0DD,
+                0 15px 0px #B0E0E6,
+                0 20px 25px rgba(255, 182, 193, 0.6);
         }
 
         .project-link:active {
@@ -394,7 +409,7 @@
         }
 
         .project-features li::before {
-            content: '✨ ';
+            content: '⭐ ';
             color: #FFB6C1;
             font-weight: bold;
             margin-right: 8px;
@@ -469,8 +484,9 @@
     </style>
 </head>
 <body>
-    <button id="snow-toggle" class="snow-toggle" aria-label="Toggle sakura effect">
-        <span id="snow-toggle-text">Sakura 🌸</span>
+    <button id="snow-toggle" class="snow-toggle" aria-label="Toggle snow effect">
+        <i data-lucide="snowflake" class="icon"></i>
+        <span id="snow-toggle-text">Snow ✨</span>
     </button>
 
     <div class="container">
@@ -496,11 +512,11 @@
             </div>
         </div>
 
-        <h2 class="section-title">✨ Dev Projects ✨</h2>
+        <h2 class="section-title">🌸 Dev Projects 🌸</h2>
 
         <div class="projects">
             <div class="project-card">
-                <h2 class="project-title">BP:SR Event Tracker</h2>
+                <h2 class="project-title">⭐ BP:SR Event Tracker ⭐</h2>
                 <p class="project-description">
                     A comprehensive event tracking web application for Blue Protocol: Star Resonance. Track daily, weekly, and monthly events with real-time countdowns and visual timelines. 💫
                 </p>
@@ -509,7 +525,7 @@
                     Visit Project
                 </a>
                 <div class="project-features">
-                    <h3>Key Features</h3>
+                    <h3>⭐ Key Features ⭐</h3>
                     <ul>
                         <li>Daily, Weekly & Monthly Event Tracking</li>
                         <li>Real-time Reset Timers</li>
@@ -520,7 +536,7 @@
             </div>
 
             <div class="project-card hiatus">
-                <h2 class="project-title">Wakfu Nexus</h2>
+                <h2 class="project-title">💎 Wakfu Nexus 💎</h2>
                 <p class="project-description">
                     A comprehensive encyclopedia for Wakfu players. Currently on hiatus but may return in the future! ✨
                 </p>
@@ -536,24 +552,34 @@
     <div id="snow-container" class="snow-container"></div>
 
     <script>
-        // Always show sakura (no date restriction)
-        function shouldShowSakura() {
-            return true;
+        // Check if we should show snow (until February 1st)
+        function shouldShowSnow() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const feb1 = new Date(currentYear, 1, 1); // February 1st (month is 0-indexed)
+            
+            // If we're past Feb 1st this year, check next year's Feb 1st
+            if (now >= feb1) {
+                const nextFeb1 = new Date(currentYear + 1, 1, 1);
+                return now < nextFeb1;
+            }
+            
+            return now < feb1;
         }
 
-        // Get sakura preference from localStorage
-        function getSakuraPreference() {
-            const saved = localStorage.getItem('sakuraEnabled');
+        // Get snow preference from localStorage
+        function getSnowPreference() {
+            const saved = localStorage.getItem('snowEnabled');
             return saved === null ? true : saved === 'true'; // Default to true if not set
         }
 
-        // Save sakura preference to localStorage
-        function setSakuraPreference(enabled) {
-            localStorage.setItem('sakuraEnabled', enabled.toString());
+        // Save snow preference to localStorage
+        function setSnowPreference(enabled) {
+            localStorage.setItem('snowEnabled', enabled.toString());
         }
 
-        // Toggle sakura visibility
-        function toggleSakura() {
+        // Toggle snow visibility
+        function toggleSnow() {
             const snowContainer = document.getElementById('snow-container');
             const toggleButton = document.getElementById('snow-toggle');
             const toggleText = document.getElementById('snow-toggle-text');
@@ -564,72 +590,76 @@
             
             if (isHidden) {
                 snowContainer.classList.remove('hidden');
-                toggleText.textContent = 'Sakura 🌸';
-                setSakuraPreference(true);
+                toggleText.textContent = 'Snow ✨';
+                setSnowPreference(true);
             } else {
                 snowContainer.classList.add('hidden');
-                toggleText.textContent = 'No Sakura 💔';
-                setSakuraPreference(false);
+                toggleText.textContent = 'No Snow 💔';
+                setSnowPreference(false);
             }
         }
 
-        // Create sakura petals
-        function createSakura() {
+        // Create snowflakes
+        function createSnow() {
+            if (!shouldShowSnow()) {
+                // Hide toggle button if snow shouldn't show
+                const toggleButton = document.getElementById('snow-toggle');
+                if (toggleButton) {
+                    toggleButton.style.display = 'none';
+                }
+                return;
+            }
+
             const snowContainer = document.getElementById('snow-container');
             if (!snowContainer) return;
 
-            const sakuraPetals = ['✿', '❀'];
-            const pastelPinks = ['#FFB6C1', '#FFC0CB', '#FFD1DC', '#FFE4E1', '#F8C8DC', '#FFB3DE', '#FFCCE5'];
-            const numPetals = 50;
+            const snowflakes = ['❄', '❅', '❆', '✨', '⭐', '💫', '🌟'];
+            const numSnowflakes = 50;
 
-            for (let i = 0; i < numPetals; i++) {
-                const petal = document.createElement('div');
-                petal.className = 'snowflake';
-                petal.textContent = sakuraPetals[Math.floor(Math.random() * sakuraPetals.length)];
-                
-                // Random pastel pink color
-                const randomColor = pastelPinks[Math.floor(Math.random() * pastelPinks.length)];
-                petal.style.color = randomColor;
+            for (let i = 0; i < numSnowflakes; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
                 
                 // Random starting position
-                petal.style.left = Math.random() * 100 + '%';
+                snowflake.style.left = Math.random() * 100 + '%';
                 
                 // Random animation duration (3-8 seconds)
                 const duration = Math.random() * 5 + 3;
-                petal.style.animationDuration = duration + 's';
+                snowflake.style.animationDuration = duration + 's';
                 
                 // Random delay
-                petal.style.animationDelay = Math.random() * 2 + 's';
+                snowflake.style.animationDelay = Math.random() * 2 + 's';
                 
                 // Random size
                 const size = Math.random() * 0.5 + 0.5;
-                petal.style.fontSize = size + 'em';
+                snowflake.style.fontSize = size + 'em';
                 
                 // Random opacity
-                petal.style.opacity = Math.random() * 0.5 + 0.5;
+                snowflake.style.opacity = Math.random() * 0.5 + 0.5;
                 
-                snowContainer.appendChild(petal);
+                snowContainer.appendChild(snowflake);
             }
 
             // Apply saved preference
-            const sakuraEnabled = getSakuraPreference();
-            if (!sakuraEnabled) {
+            const snowEnabled = getSnowPreference();
+            if (!snowEnabled) {
                 snowContainer.classList.add('hidden');
                 const toggleText = document.getElementById('snow-toggle-text');
                 if (toggleText) {
-                    toggleText.textContent = 'No Sakura 💔';
+                    toggleText.textContent = 'No Snow 💔';
                 }
             }
         }
 
-        // Initialize sakura when page loads
-        createSakura();
+        // Initialize snow when page loads
+        createSnow();
 
         // Add click handler to toggle button
         document.addEventListener('DOMContentLoaded', function() {
             const toggleButton = document.getElementById('snow-toggle');
             if (toggleButton) {
-                toggleButton.addEventListener('click', toggleSakura);
+                toggleButton.addEventListener('click', toggleSnow);
             }
             
             // Initialize Lucide icons
@@ -640,5 +670,4 @@
     </script>
 </body>
 </html>
-
 
