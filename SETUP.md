@@ -31,7 +31,7 @@ bundle install
 bundle exec jekyll serve
 ```
 
-5. Open http://localhost:4000 in your browser
+5. Open localhost:4000 in your browser
 
 ### Option 2: Using rbenv
 
@@ -66,7 +66,7 @@ bundle exec jekyll serve
 
 ## Commands
 
-- `bundle exec jekyll serve` - Start local server (http://localhost:4000)
+- `bundle exec jekyll serve` - Start local server at localhost:4000
 - `bundle exec jekyll serve --livereload` - Start with auto-reload
 - `bundle exec jekyll build` - Build static site
 
