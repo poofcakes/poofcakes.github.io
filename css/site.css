@@ -1,0 +1,762 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    min-height: 100%;
+    background: url('../clouds.png');
+    background-attachment: fixed;
+}
+
+body {
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    background-color: transparent;
+    background-image: url('../grass.png');
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 6rem;
+    color: #333;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.3) 2px, transparent 2px),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 100px 100px, 150px 150px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow:
+        0 0 3px rgba(255, 255, 255, 0.5),
+        0 0 6px rgba(255, 182, 193, 0.3);
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+.snow-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%);
+    border: 4px solid #FFC0CB;
+    color: #8B4A6B;
+    border-radius: 20px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow:
+        0 4px 0px #DDA0DD,
+        0 8px 0px #B0E0E6,
+        0 12px 15px rgba(255, 182, 193, 0.4);
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+.snow-toggle:hover {
+    background: linear-gradient(135deg, #FFC0CB 0%, #FFD1DC 100%);
+    transform: translateY(-3px);
+    box-shadow:
+        0 6px 0px #DDA0DD,
+        0 10px 0px #B0E0E6,
+        0 14px 20px rgba(255, 182, 193, 0.5);
+}
+
+.snow-toggle:active {
+    transform: translateY(0);
+}
+
+.snow-container.hidden {
+    display: none;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    flex: 1;
+}
+
+.site-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    border: 4px solid #FFC0CB;
+    box-shadow:
+        0 4px 0px #DDA0DD,
+        0 8px 15px rgba(255, 182, 193, 0.3);
+}
+
+.site-nav a {
+    color: #8B4A6B;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 12px;
+    transition: background 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+    background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.header h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-shadow:
+        3px 3px 0px #FFB6C1,
+        6px 6px 0px #DDA0DD,
+        9px 9px 0px #B0E0E6,
+        12px 12px 10px rgba(255, 182, 193, 0.3);
+    animation: bounce 2s ease-in-out infinite;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+}
+
+.header h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.header p,
+.intro-text {
+    font-size: 1.15rem;
+    opacity: 0.95;
+    margin-bottom: 20px;
+    color: #2C3E50;
+    font-weight: 700;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.poofhead {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 80px;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+    margin-left: 15px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%);
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border: 4px solid #FFC0CB;
+    box-shadow:
+        0 4px 0px #DDA0DD,
+        0 8px 0px #B0E0E6,
+        0 12px 15px rgba(255, 182, 193, 0.4);
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
+    color: #8B4A6B;
+}
+
+.social-link i {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, #FFC0CB 0%, #FFD1DC 100%);
+    transform: translateY(-3px);
+    box-shadow:
+        0 6px 0px #DDA0DD,
+        0 10px 0px #B0E0E6,
+        0 14px 20px rgba(255, 182, 193, 0.6);
+}
+
+.discord-link,
+.discord-callout-button {
+    background: linear-gradient(135deg, #B0E0E6 0%, #DDA0DD 100%);
+    border-color: #B0E0E6;
+}
+
+.discord-callout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 40px;
+    padding: 28px 34px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 248, 255, 0.96) 100%);
+    border: 5px solid #B0E0E6;
+    border-radius: 25px;
+    box-shadow:
+        0 8px 0px #DDA0DD,
+        0 16px 24px rgba(176, 224, 230, 0.35);
+}
+
+.discord-callout h2,
+.discord-contact-box h2 {
+    font-family: 'Fredoka One', cursive;
+    color: #2C3E50;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0px #B0E0E6;
+}
+
+.discord-callout p,
+.discord-contact-box p {
+    color: #2C3E50;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.discord-contact-box {
+    margin: 24px 0;
+    padding: 24px;
+    background: #F0F8FF;
+    border: 4px solid #B0E0E6;
+    border-radius: 20px;
+}
+
+.mini-game-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+    gap: 28px;
+    align-items: stretch;
+    margin-bottom: 50px;
+    padding: 34px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 240, 245, 0.96) 100%);
+    border: 5px solid #FFC0CB;
+    border-radius: 28px;
+    box-shadow:
+        0 8px 0px #DDA0DD,
+        0 16px 0px #B0E0E6,
+        0 24px 30px rgba(255, 182, 193, 0.3);
+}
+
+.mini-game-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.eyebrow {
+    color: #8B4A6B;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.mini-game-copy h2 {
+    font-family: 'Fredoka One', cursive;
+    color: #2C3E50;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 0px #FFB6C1;
+}
+
+.mini-game-copy p {
+    color: #2C3E50;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.mini-game-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.game-start-button {
+    appearance: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.game-start-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.75;
+}
+
+.mini-game-status {
+    color: #8B4A6B;
+    font-weight: 700;
+}
+
+.mini-game-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.8) 0 8%, transparent 9%),
+        linear-gradient(180deg, #DFF8FF 0%, #FFF0F5 100%);
+    border: 4px solid #B0E0E6;
+    border-radius: 22px;
+    box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.55);
+}
+
+.mini-game-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 16px;
+    color: #2C3E50;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.75);
+    border-bottom: 3px dashed #FFC0CB;
+}
+
+.sakura-game-field {
+    position: relative;
+    flex: 1;
+    min-height: 220px;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+.sakura-target {
+    position: absolute;
+    top: -44px;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.4);
+    color: #FF7FB5;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 1.65rem;
+    line-height: 1;
+    text-shadow:
+        0 2px 0 #FFFFFF,
+        0 0 8px rgba(255, 127, 181, 0.65);
+    transform: translateY(0) rotate(0deg);
+    animation: sakura-target-fall var(--fall-duration, 2.8s) linear forwards;
+}
+
+.sakura-target:hover,
+.sakura-target:focus-visible {
+    background: rgba(255, 255, 255, 0.8);
+    outline: 3px solid #DDA0DD;
+}
+
+@keyframes sakura-target-fall {
+    to {
+        transform: translateY(270px) rotate(260deg);
+    }
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.project-card,
+.content-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
+    border-radius: 25px;
+    padding: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 5px solid #FFC0CB;
+    box-shadow:
+        0 8px 0px #DDA0DD,
+        0 16px 0px #B0E0E6,
+        0 24px 30px rgba(255, 182, 193, 0.3);
+}
+
+.project-card::before {
+    content: '✨';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 12px 0px #DDA0DD,
+        0 20px 0px #B0E0E6,
+        0 28px 40px rgba(255, 182, 193, 0.4);
+}
+
+.project-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #2C3E50;
+    text-shadow: 2px 2px 0px #FFB6C1;
+    letter-spacing: 1px;
+}
+
+.project-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #2C3E50;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.project-link,
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%);
+    color: #8B4A6B;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 20px;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow:
+        0 5px 0px #DDA0DD,
+        0 10px 0px #B0E0E6,
+        0 15px 20px rgba(255, 182, 193, 0.4);
+    border: 3px solid #FFC0CB;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.project-link:hover,
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 7px 0px #DDA0DD,
+        0 12px 0px #B0E0E6,
+        0 17px 25px rgba(255, 182, 193, 0.6);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #B0E0E6 0%, #DDA0DD 100%);
+    border-color: #B0E0E6;
+}
+
+.project-features {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 3px dashed #FFC0CB;
+}
+
+.project-features h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 0px #FFB6C1;
+    letter-spacing: 1px;
+}
+
+.project-features ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-features li {
+    padding: 5px 0;
+    color: #2C3E50;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.project-features li::before {
+    content: '✨ ';
+    color: #FFB6C1;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.section-title {
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-shadow:
+        3px 3px 0px #FFB6C1,
+        5px 5px 0px #FFC0CB,
+        7px 7px 10px rgba(255, 182, 193, 0.3);
+    letter-spacing: 2px;
+}
+
+.content-card h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    color: #2C3E50;
+    margin: 1.5rem 0 0.75rem;
+    text-shadow: 1px 1px 0px #FFB6C1;
+}
+
+.content-card h2:first-child {
+    margin-top: 0;
+}
+
+.content-card h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+    color: #2C3E50;
+    margin: 1.25rem 0 0.5rem;
+}
+
+.content-card p,
+.content-card li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #2C3E50;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.content-card ul,
+.content-card ol {
+    margin: 0 0 1rem 1.5rem;
+}
+
+.content-card a {
+    color: #8B4A6B;
+    font-weight: 700;
+}
+
+.content-card code {
+    background: #FFF0F5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.95em;
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-list li {
+    padding: 16px 0;
+    border-bottom: 2px dashed #FFC0CB;
+}
+
+.post-list li:last-child {
+    border-bottom: none;
+}
+
+.post-list a {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+    color: #8B4A6B;
+    text-decoration: none;
+}
+
+.post-list a:hover {
+    text-decoration: underline;
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+.site-footer {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px;
+    padding: 24px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    border: 4px solid #FFC0CB;
+    box-shadow: 0 4px 0px #DDA0DD;
+}
+
+.site-footer p {
+    color: #2C3E50;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-links a {
+    color: #8B4A6B;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-decoration {
+    background: url('../sakura.png');
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    position: fixed;
+    height: 100%;
+    z-index: -1;
+    top: -30px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card,
+    .content-card {
+        padding: 30px;
+    }
+
+    .mini-game-card {
+        grid-template-columns: 1fr;
+        padding: 28px;
+    }
+
+    .discord-callout {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 28px;
+    }
+
+    .mini-game-stats {
+        flex-wrap: wrap;
+    }
+
+    .site-nav {
+        gap: 8px;
+    }
+
+    .site-nav a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}

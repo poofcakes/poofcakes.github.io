@@ -3,450 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>poofcakes</title>
+    <title>Poofcakes - Game Tools, Dev Projects & Blog Posts</title>
+    <meta name="description" content="Poofcakes builds free browser-based game tools, databases, and trackers for Wakfu, Blue Protocol, MapleStory, and more. Blog posts, dev logs, and project updates.">
+    <link rel="canonical" href="https://poofcakes.com/">
+    <meta property="og:title" content="Poofcakes - Game Tools & Dev Projects">
+    <meta property="og:description" content="Free game tools, databases, trackers, and blog posts built by Poofcakes.">
+    <meta property="og:url" content="https://poofcakes.com/">
+    <meta property="og:type" content="website">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            height: 100%;
-            min-height: 100%;
-            background: url('clouds.png');
-            background-attachment: fixed;
-        }
-
-        body {
-            font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
-            background-color: transparent;
-            background-image: url('grass.png');
-            background-position: center bottom;
-            background-repeat: repeat-x;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            padding-bottom: 6rem;
-            color: #333;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.3) 2px, transparent 2px),
-                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-            background-size: 100px 100px, 150px 150px;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .snow-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1000;
-            overflow: hidden;
-        }
-
-        .snowflake {
-            position: absolute;
-            top: -10px;
-            font-size: 1em;
-            font-family: Arial, sans-serif;
-            text-shadow: 
-                0 0 3px rgba(255, 255, 255, 0.5),
-                0 0 6px rgba(255, 182, 193, 0.3);
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-            }
-        }
-
-        .snow-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
-            background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%);
-            border: 4px solid #FFC0CB;
-            color: #8B4A6B;
-            border-radius: 20px;
-            padding: 12px 24px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 
-                0 4px 0px #DDA0DD,
-                0 8px 0px #B0E0E6,
-                0 12px 15px rgba(255, 182, 193, 0.4);
-            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
-        }
-
-        .snow-toggle .icon {
-            width: 16px;
-            height: 16px;
-        }
-
-        .snow-toggle:hover {
-            background: linear-gradient(135deg, #FFC0CB 0%, #FFD1DC 100%);
-            transform: translateY(-3px);
-            box-shadow: 
-                0 6px 0px #DDA0DD,
-                0 10px 0px #B0E0E6,
-                0 14px 20px rgba(255, 182, 193, 0.5);
-        }
-
-        .snow-toggle:active {
-            transform: translateY(0);
-        }
-
-        .snow-container.hidden {
-            display: none;
-        }
-
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            position: relative;
-            z-index: 10;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 60px;
-            color: white;
-        }
-
-        .header h1 {
-            font-family: 'Fredoka One', cursive;
-            font-size: 3.5rem;
-            font-weight: 400;
-            margin-bottom: 10px;
-            text-shadow: 
-                3px 3px 0px #FFB6C1,
-                6px 6px 0px #DDA0DD,
-                9px 9px 0px #B0E0E6,
-                12px 12px 10px rgba(255, 182, 193, 0.3);
-            animation: bounce 2s ease-in-out infinite;
-            color: #FFFFFF;
-            letter-spacing: 2px;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
-        .header p {
-            font-size: 1.25rem;
-            opacity: 0.95;
-            margin-bottom: 25px;
-            color: #2C3E50;
-            font-weight: 700;
-            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
-        }
-
-        .poofhead {
-            display: inline-block;
-            vertical-align: middle;
-            max-width: 80px;
-            height: auto;
-            animation: float 3s ease-in-out infinite;
-            margin-left: 15px;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: white;
-            text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 15px;
-            background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%);
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-            font-weight: 700;
-            border: 4px solid #FFC0CB;
-            box-shadow: 
-                0 4px 0px #DDA0DD,
-                0 8px 0px #B0E0E6,
-                0 12px 15px rgba(255, 182, 193, 0.4);
-            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
-            color: #8B4A6B;
-        }
-
-        .social-link i {
-            width: 18px;
-            height: 18px;
-            flex-shrink: 0;
-            font-size: 18px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .icon {
-            width: 1em;
-            height: 1em;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .social-link:hover {
-            background: linear-gradient(135deg, #FFC0CB 0%, #FFD1DC 100%);
-            transform: translateY(-3px);
-            box-shadow: 
-                0 6px 0px #DDA0DD,
-                0 10px 0px #B0E0E6,
-                0 14px 20px rgba(255, 182, 193, 0.6);
-        }
-
-        .social-link:active {
-            transform: translateY(0);
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .project-card {
-            background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
-            border-radius: 25px;
-            padding: 40px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border: 5px solid #FFC0CB;
-            box-shadow: 
-                0 8px 0px #DDA0DD,
-                0 16px 0px #B0E0E6,
-                0 24px 30px rgba(255, 182, 193, 0.3);
-        }
-
-        .project-card::before {
-            content: '✨';
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 1.5rem;
-            opacity: 0.8;
-            animation: sparkle 2s ease-in-out infinite;
-        }
-
-        @keyframes sparkle {
-            0%, 100% { opacity: 0.6; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 
-                0 12px 0px #DDA0DD,
-                0 20px 0px #B0E0E6,
-                0 28px 40px rgba(255, 182, 193, 0.4);
-        }
-
-        .project-title {
-            font-family: 'Fredoka One', cursive;
-            font-size: 2rem;
-            font-weight: 400;
-            margin-bottom: 15px;
-            color: #2C3E50;
-            text-shadow: 2px 2px 0px #FFB6C1;
-            letter-spacing: 1px;
-        }
-
-        .project-description {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #2C3E50;
-            margin-bottom: 25px;
-            font-weight: 500;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 100%);
-            color: #8B4A6B;
-            text-decoration: none;
-            padding: 14px 32px;
-            border-radius: 20px;
-            font-weight: 700;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 
-                0 5px 0px #DDA0DD,
-                0 10px 0px #B0E0E6,
-                0 15px 20px rgba(255, 182, 193, 0.4);
-            border: 3px solid #FFC0CB;
-            text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-link .icon {
-            width: 16px;
-            height: 16px;
-        }
-
-        .project-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 
-                0 7px 0px #DDA0DD,
-                0 12px 0px #B0E0E6,
-                0 17px 25px rgba(255, 182, 193, 0.6);
-        }
-
-        .project-link:active {
-            transform: scale(0.98);
-        }
-
-        .project-features {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 3px dashed #FFC0CB;
-        }
-
-        .project-features h3 {
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.1rem;
-            font-weight: 400;
-            color: #2C3E50;
-            margin-bottom: 10px;
-            text-shadow: 1px 1px 0px #FFB6C1;
-            letter-spacing: 1px;
-        }
-
-        .project-features ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .project-features li {
-            padding: 5px 0;
-            color: #2C3E50;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .project-features li::before {
-            content: '✨ ';
-            color: #FFB6C1;
-            font-weight: bold;
-            margin-right: 8px;
-            text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
-        }
-
-        .section-title {
-            font-family: 'Fredoka One', cursive;
-            text-align: center;
-            color: white;
-            font-size: 2.5rem;
-            font-weight: 400;
-            margin-bottom: 30px;
-            text-shadow: 
-                3px 3px 0px #FFB6C1,
-                5px 5px 0px #FFC0CB,
-                7px 7px 10px rgba(255, 182, 193, 0.3);
-            letter-spacing: 2px;
-        }
-
-        .cute-decoration {
-            display: inline-block;
-            animation: spin 3s linear infinite;
-            margin: 0 5px;
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .cute-heart {
-            display: inline-block;
-            animation: pulse 1.5s ease-in-out infinite;
-            margin: 0 3px;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-
-        .footer {
-            background: url('sakura.png');
-            background-position: center bottom;
-            background-repeat: repeat-x;
-            position: absolute;
-            height: 100%;
-            z-index: -1;
-            top: -30px;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            padding: 1rem;
-            text-align: center;
-            pointer-events: none;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5rem;
-            }
-
-            .projects {
-                grid-template-columns: 1fr;
-            }
-
-            .project-card {
-                padding: 30px;
-            }
-        }
-    </style>
 </head>
 <body>
     <button id="snow-toggle" class="snow-toggle" aria-label="Toggle sakura effect">
@@ -454,31 +24,71 @@
     </button>
 
     <div class="container">
-        <div class="header">
-            <h1>poofcakes <img src="poofhead.gif" alt="poofhead" class="poofhead"></h1>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects/index.html">Projects</a>
+            <a href="posts/index.html">Blog Posts</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <header class="header">
+            <h1><a href="index.html">Poofcakes</a> <img src="poofhead.gif" alt="Poofcakes mascot" class="poofhead"></h1>
+            <p class="intro-text">
+                Welcome! I'm Poofcakes - a developer and content creator who builds free browser-based tools for games I love.
+                This site hosts my projects, blog posts, and dev notes for Wakfu, Blue Protocol, MapleStory, and more.
+            </p>
             <div class="social-links">
                 <a href="https://www.twitch.tv/poofcakes" class="social-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-twitch"></i>
-                    Twitch
+                    <i class="fab fa-twitch"></i> Twitch
                 </a>
                 <a href="https://steamcommunity.com/id/poofcakes" class="social-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-steam"></i>
-                    Steam
-                </a>
-                <a href="https://www.instagram.com/poofcakes" class="social-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-instagram"></i>
-                    Instagram
+                    <i class="fab fa-steam"></i> Steam
                 </a>
                 <a href="https://www.youtube.com/@poofcakes1" class="social-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-youtube"></i>
-                    YouTube
+                    <i class="fab fa-youtube"></i> YouTube
                 </a>
-                <a href="https://www.reddit.com/user/Poofcakes/" class="social-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-reddit"></i>
-                    Reddit
+                <a href="https://discord.gg/DrB9GYM" class="social-link discord-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-discord"></i> Join Poof's Little Corner Discord
                 </a>
             </div>
-        </div>
+        </header>
+
+        <section class="discord-callout" aria-labelledby="discord-callout-title">
+            <div>
+                <p class="eyebrow">Community</p>
+                <h2 id="discord-callout-title">Join Poof's Little Corner Discord</h2>
+                <p>
+                    Hang out, ask questions, share project feedback, and get updates on game tools and blog posts.
+                </p>
+            </div>
+            <a href="https://discord.gg/DrB9GYM" class="btn discord-callout-button" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-discord"></i> Join Poof's Little Corner Discord
+            </a>
+        </section>
+
+        <section class="mini-game-card" aria-labelledby="mini-game-title">
+            <div class="mini-game-copy">
+                <p class="eyebrow">Tiny Break</p>
+                <h2 id="mini-game-title">Catch the Sakura</h2>
+                <p>
+                    Click as many falling petals as you can before the timer runs out.
+                    Your best score stays on this browser.
+                </p>
+                <div class="mini-game-actions">
+                    <button id="sakura-game-start" class="btn game-start-button" type="button">Start Game</button>
+                    <span id="sakura-game-status" class="mini-game-status" aria-live="polite">Ready when you are.</span>
+                </div>
+            </div>
+            <div class="mini-game-panel" aria-label="Catch the Sakura game area">
+                <div class="mini-game-stats">
+                    <span>Score: <strong id="sakura-game-score">0</strong></span>
+                    <span>Time: <strong id="sakura-game-time">20</strong>s</span>
+                    <span>Best: <strong id="sakura-game-best">0</strong></span>
+                </div>
+                <div id="sakura-game-field" class="sakura-game-field" role="application" aria-label="Click the falling sakura petals"></div>
+            </div>
+        </section>
 
         <h2 class="section-title">✨ Dev Projects ✨</h2>
 
@@ -486,11 +96,13 @@
             <div class="project-card">
                 <h2 class="project-title">BP:SR Event Tracker</h2>
                 <p class="project-description">
-                    A comprehensive event tracking web application for Blue Protocol: Star Resonance. Track daily, weekly, and monthly events with real-time countdowns and visual timelines. 💫
+                    Track daily, weekly, and monthly events in Blue Protocol: Star Resonance with real-time countdowns and visual timelines.
                 </p>
-                <a href="https://bpevents.poofcakes.com/" class="project-link" target="_blank" rel="noopener" aria-label="Visit BP:SR Event Tracker">
-                    <i data-lucide="external-link" class="icon"></i>
-                    Visit BP:SR Event Tracker
+                <a href="https://bpevents.poofcakes.com/" class="project-link" target="_blank" rel="noopener">
+                    <i data-lucide="external-link" class="icon"></i> Launch App
+                </a>
+                <a href="projects/bpsr-event-tracker.html" class="project-link btn-secondary">
+                    <i data-lucide="book-open" class="icon"></i> Learn More
                 </a>
                 <div class="project-features">
                     <h3>Key Features</h3>
@@ -506,11 +118,13 @@
             <div class="project-card">
                 <h2 class="project-title">WakfuDB</h2>
                 <p class="project-description">
-                    A comprehensive encyclopedia for Wakfu players.
+                    A comprehensive encyclopedia for Wakfu players - items, monsters, resources, and crafting references in one searchable database.
                 </p>
                 <a href="https://wakfudb.poofcakes.com" class="project-link" target="_blank" rel="noopener noreferrer">
-                    <i data-lucide="external-link" class="icon"></i>
-                    Visit Project
+                    <i data-lucide="external-link" class="icon"></i> Launch App
+                </a>
+                <a href="projects/wakfudb.html" class="project-link btn-secondary">
+                    <i data-lucide="book-open" class="icon"></i> Learn More
                 </a>
                 <div class="project-features">
                     <h3>Key Features</h3>
@@ -526,11 +140,13 @@
             <div class="project-card">
                 <h2 class="project-title">wzbrowser</h2>
                 <p class="project-description">
-                    Browse MapleStory WZ files directly in your browser. Load your own files, decode them locally, and export assets without uploading anything. ✨
+                    Browse MapleStory WZ files in your browser. Load files locally, decode them client-side, and export assets without uploading anything.
                 </p>
                 <a href="https://wzbrowser.poofcakes.com/" class="project-link" target="_blank" rel="noopener noreferrer">
-                    <i data-lucide="external-link" class="icon"></i>
-                    Visit Project
+                    <i data-lucide="external-link" class="icon"></i> Launch App
+                </a>
+                <a href="projects/wzbrowser.html" class="project-link btn-secondary">
+                    <i data-lucide="book-open" class="icon"></i> Learn More
                 </a>
                 <div class="project-features">
                     <h3>Key Features</h3>
@@ -546,11 +162,13 @@
             <div class="project-card">
                 <h2 class="project-title">Pixels</h2>
                 <p class="project-description">
-                    A fuse bead pixel pattern generator for turning pixel art ideas into bead-ready craft patterns. 💖
+                    A fuse bead pixel pattern generator for turning pixel art ideas into bead-ready craft patterns.
                 </p>
                 <a href="https://pixels.poofcakes.com/" class="project-link" target="_blank" rel="noopener noreferrer">
-                    <i data-lucide="external-link" class="icon"></i>
-                    Visit Project
+                    <i data-lucide="external-link" class="icon"></i> Launch App
+                </a>
+                <a href="projects/pixels.html" class="project-link btn-secondary">
+                    <i data-lucide="book-open" class="icon"></i> Learn More
                 </a>
                 <div class="project-features">
                     <h3>Key Features</h3>
@@ -563,115 +181,34 @@
                 </div>
             </div>
         </div>
+
+        <h2 class="section-title">📖 Latest Blog Posts</h2>
+
+        <div class="content-card">
+            <ul class="post-list">
+                <li>
+                    <a href="posts/wakfu-beginners-guide.html">Wakfu Beginner's Guide: What New Players Should Know</a>
+                    <p class="post-meta">Getting started with classes, resources, and useful community tools.</p>
+                </li>
+            </ul>
+            <p style="margin-top: 1.5rem; margin-bottom: 0;">
+                <a href="posts/index.html" class="btn">View All Blog Posts</a>
+            </p>
+        </div>
     </div>
 
-    <div class="footer"></div>
+    <footer class="site-footer">
+        <p>&copy; 2026 Poofcakes. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+        </div>
+    </footer>
+
+    <div class="footer-decoration" aria-hidden="true"></div>
     <div id="snow-container" class="snow-container"></div>
-
-    <script>
-        // Always show sakura (no date restriction)
-        function shouldShowSakura() {
-            return true;
-        }
-
-        // Get sakura preference from localStorage
-        function getSakuraPreference() {
-            const saved = localStorage.getItem('sakuraEnabled');
-            return saved === null ? true : saved === 'true'; // Default to true if not set
-        }
-
-        // Save sakura preference to localStorage
-        function setSakuraPreference(enabled) {
-            localStorage.setItem('sakuraEnabled', enabled.toString());
-        }
-
-        // Toggle sakura visibility
-        function toggleSakura() {
-            const snowContainer = document.getElementById('snow-container');
-            const toggleButton = document.getElementById('snow-toggle');
-            const toggleText = document.getElementById('snow-toggle-text');
-            
-            if (!snowContainer || !toggleButton || !toggleText) return;
-
-            const isHidden = snowContainer.classList.contains('hidden');
-            
-            if (isHidden) {
-                snowContainer.classList.remove('hidden');
-                toggleText.textContent = 'Sakura 🌸';
-                setSakuraPreference(true);
-            } else {
-                snowContainer.classList.add('hidden');
-                toggleText.textContent = 'No Sakura 💔';
-                setSakuraPreference(false);
-            }
-        }
-
-        // Create sakura petals
-        function createSakura() {
-            const snowContainer = document.getElementById('snow-container');
-            if (!snowContainer) return;
-
-            const sakuraPetals = ['✿', '❀'];
-            const pastelPinks = ['#FFB6C1', '#FFC0CB', '#FFD1DC', '#FFE4E1', '#F8C8DC', '#FFB3DE', '#FFCCE5'];
-            const numPetals = 50;
-
-            for (let i = 0; i < numPetals; i++) {
-                const petal = document.createElement('div');
-                petal.className = 'snowflake';
-                petal.textContent = sakuraPetals[Math.floor(Math.random() * sakuraPetals.length)];
-                
-                // Random pastel pink color
-                const randomColor = pastelPinks[Math.floor(Math.random() * pastelPinks.length)];
-                petal.style.color = randomColor;
-                
-                // Random starting position
-                petal.style.left = Math.random() * 100 + '%';
-                
-                // Random animation duration (3-8 seconds)
-                const duration = Math.random() * 5 + 3;
-                petal.style.animationDuration = duration + 's';
-                
-                // Random delay
-                petal.style.animationDelay = Math.random() * 2 + 's';
-                
-                // Random size
-                const size = Math.random() * 0.5 + 0.5;
-                petal.style.fontSize = size + 'em';
-                
-                // Random opacity
-                petal.style.opacity = Math.random() * 0.5 + 0.5;
-                
-                snowContainer.appendChild(petal);
-            }
-
-            // Apply saved preference
-            const sakuraEnabled = getSakuraPreference();
-            if (!sakuraEnabled) {
-                snowContainer.classList.add('hidden');
-                const toggleText = document.getElementById('snow-toggle-text');
-                if (toggleText) {
-                    toggleText.textContent = 'No Sakura 💔';
-                }
-            }
-        }
-
-        // Initialize sakura when page loads
-        createSakura();
-
-        // Add click handler to toggle button
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggleButton = document.getElementById('snow-toggle');
-            if (toggleButton) {
-                toggleButton.addEventListener('click', toggleSakura);
-            }
-            
-            // Initialize Lucide icons
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-        });
-    </script>
+    <script src="js/site.js"></script>
 </body>
 </html>
-
-

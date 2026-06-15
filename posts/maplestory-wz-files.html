@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding MapleStory WZ Files - Poofcakes</title>
+    <meta name="description" content="Learn what MapleStory WZ files are, how they're structured, and how to explore them safely in your browser with wzbrowser.">
+    <link rel="canonical" href="https://poofcakes.com/posts/maplestory-wz-files.html">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/site.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <button id="snow-toggle" class="snow-toggle" aria-label="Toggle sakura effect">
+        <span id="snow-toggle-text">Sakura 🌸</span>
+    </button>
+
+    <div class="container">
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="../projects/index.html">Projects</a>
+            <a href="index.html" class="active">Blog Posts</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+
+        <header class="header">
+            <h1>Understanding MapleStory WZ Files</h1>
+            <p class="intro-text">A practical intro to MapleStory's data archives.</p>
+        </header>
+
+        <div class="content-card">
+            <p class="post-meta">Published June 2026 · <a href="index.html">All blog posts</a></p>
+
+            <p>
+                If you've ever dug into MapleStory modding, private servers, or sprite ripping, you've heard of
+                WZ files. They're the packed archives that hold most of the game's graphics, sounds, and
+                configuration data. This guide explains what they are, how they're organized, and how you can
+                explore them without uploading your game files to random websites.
+            </p>
+
+            <h2>What Is a WZ File?</h2>
+            <p>
+                WZ is a proprietary archive format used by MapleStory (and some other Nexon titles) to bundle
+                game assets efficiently. Instead of thousands of loose PNG and XML files on disk, the client
+                stores them in versioned archives like <code>Character.wz</code>, <code>Map.wz</code>,
+                <code>Item.wz</code>, and <code>Mob.wz</code>.
+            </p>
+            <p>
+                Each archive contains a tree of nodes. Leaf nodes might be images, sound clips, or XML-like
+                property data describing stats, animations, and map objects. Parent nodes group related content -
+                for example, a folder for a specific hair style or a map tileset.
+            </p>
+
+            <h2>Common WZ Archives</h2>
+            <p>Your MapleStory installation folder typically includes archives such as:</p>
+            <ul>
+                <li><strong>Character.wz</strong> - player appearances, equipment sprites, animations</li>
+                <li><strong>Item.wz</strong> - item icons and related graphics</li>
+                <li><strong>Map.wz</strong> - map backgrounds, objects, and tile data</li>
+                <li><strong>Mob.wz</strong> - monster sprites and animation data</li>
+                <li><strong>Skill.wz</strong> - skill effects and icons</li>
+                <li><strong>Sound.wz</strong> - music and sound effects</li>
+            </ul>
+            <p>
+                Exact file names and encryption vary by client version and region. Private server communities
+                often maintain version-specific tooling for this reason.
+            </p>
+
+            <h2>How the Tree Structure Works</h2>
+            <p>
+                Think of a WZ file like a filesystem inside a single binary package. When you open one, you see
+                a hierarchy:
+            </p>
+            <ol>
+                <li>Top-level categories (e.g., categories of items or maps)</li>
+                <li>Subfolders for specific IDs or names</li>
+                <li>Leaf nodes containing actual data - PNG images, canvas instructions, or XML properties</li>
+            </ol>
+            <p>
+                Property nodes often store numbers and strings - damage values, map spawn points, string labels.
+                Image nodes store compressed bitmap data that tools decode into PNG or render to a canvas.
+            </p>
+
+            <h2>Encryption & Version Changes</h2>
+            <p>
+                Nexon has updated WZ encryption schemes over the years. A decoder that works for one client
+                version may fail on another. Symptoms include garbled tree names, failed image decode, or empty
+                nodes. This is why WZ tooling needs ongoing maintenance after major patches.
+            </p>
+            <p>
+                If you're working with files from your own legitimate installation, always note the client
+                version when reporting decode issues.
+            </p>
+
+            <h2>Exploring WZ Files Safely</h2>
+            <p>
+                Historically, players used desktop programs to open WZ archives. That works, but many online
+                "converters" ask you to upload game files - something you should avoid with proprietary client
+                data.
+            </p>
+            <p>
+                I built <a href="../projects/wzbrowser.html">wzbrowser</a> to solve this differently: load a WZ
+                file from your computer, decode it entirely in the browser with JavaScript, browse the tree,
+                preview images on a canvas, and export XML or PNG locally. Nothing gets uploaded.
+            </p>
+
+            <h2>Typical Workflow with wzbrowser</h2>
+            <ol>
+                <li>Locate the WZ file in your MapleStory installation directory</li>
+                <li>Open <a href="https://wzbrowser.poofcakes.com/" target="_blank" rel="noopener">wzbrowser</a> and load the file</li>
+                <li>Browse the node tree to find the asset category you need</li>
+                <li>Preview sprites on the canvas to confirm you have the right node</li>
+                <li>Export PNG or XML for your personal reference or project</li>
+            </ol>
+
+            <h2>Legal & Ethical Considerations</h2>
+            <p>
+                MapleStory assets are copyrighted. Extracting files for personal learning or reference is one
+                thing; redistributing sprites, running unauthorized services, or selling extracted content is
+                another. Always read Nexon's terms of service and respect intellectual property.
+            </p>
+            <p>
+                This guide and wzbrowser are fan-made tools for education and personal use. They are not
+                affiliated with Nexon.
+            </p>
+
+            <h2>Troubleshooting</h2>
+            <ul>
+                <li><strong>Tree looks empty</strong> - wrong encryption for your client version; try an updated decoder</li>
+                <li><strong>Images look corrupted</strong> - node may use a format variant; check related nodes or version-specific docs</li>
+                <li><strong>Large files load slowly</strong> - normal for big archives; let the browser finish parsing</li>
+            </ul>
+
+            <p>
+                <a href="https://wzbrowser.poofcakes.com/" class="btn" target="_blank" rel="noopener">Try wzbrowser</a>
+                <a href="../projects/wzbrowser.html" class="btn btn-secondary">Project Details</a>
+            </p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Poofcakes. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+            <a href="../privacy.html">Privacy Policy</a>
+            <a href="../terms.html">Terms of Use</a>
+        </div>
+    </footer>
+
+    <div class="footer-decoration" aria-hidden="true"></div>
+    <div id="snow-container" class="snow-container"></div>
+    <script src="../js/site.js"></script>
+</body>
+</html>

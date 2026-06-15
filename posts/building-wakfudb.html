@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Built WakfuDB - Poofcakes</title>
+    <meta name="description" content="A dev log on building WakfuDB - designing a fast, player-friendly Wakfu encyclopedia with searchable items, monsters, and crafting data.">
+    <link rel="canonical" href="https://poofcakes.com/posts/building-wakfudb.html">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/site.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <button id="snow-toggle" class="snow-toggle" aria-label="Toggle sakura effect">
+        <span id="snow-toggle-text">Sakura 🌸</span>
+    </button>
+
+    <div class="container">
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="../projects/index.html">Projects</a>
+            <a href="index.html" class="active">Blog Posts</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+
+        <header class="header">
+            <h1>How I Built WakfuDB</h1>
+            <p class="intro-text">Why I made it, what problems it solves, and how it's structured.</p>
+        </header>
+
+        <div class="content-card">
+            <p class="post-meta">Published June 2026 · <a href="index.html">All blog posts</a></p>
+
+            <p>
+                WakfuDB started as a personal frustration project. I was theorycrafting a build, had twelve wiki
+                tabs open, and still couldn't answer a simple question: "Where does this resource drop, and what
+                crafts use it?" Wikis are invaluable, but they're not optimized for mid-game lookup speed.
+                WakfuDB is my attempt to fix that.
+            </p>
+
+            <h2>The Problem</h2>
+            <p>
+                Wakfu's systems are interconnected. Items link to recipes, recipes link to resources, resources
+                link to zones and monsters. Wiki pages capture this, but navigation is page-heavy. Search is
+                often slow or scattered across fan sites with different update schedules.
+            </p>
+            <p>
+                I wanted something closer to a traditional game database - type a name, get a clean result,
+                see related entries without losing context.
+            </p>
+
+            <h2>Design Goals</h2>
+            <p>Before writing code, I set a few constraints:</p>
+            <ul>
+                <li><strong>Fast search first</strong> - the homepage should get out of your way</li>
+                <li><strong>Readable on mobile</strong> - I check databases on a phone next to my main screen</li>
+                <li><strong>Cross-linked data</strong> - items should surface related monsters, recipes, and resources</li>
+                <li><strong>No account wall</strong> - reference tools should be frictionless</li>
+                <li><strong>Maintainable after patches</strong> - updates shouldn't require rewriting the whole app</li>
+            </ul>
+
+            <h2>Data Pipeline</h2>
+            <p>
+                Game data changes with every patch. WakfuDB needs a pipeline that can ingest updated definitions,
+                normalize them into a consistent schema, and publish without long downtime.
+            </p>
+            <p>
+                The core approach is separating <em>data</em> from <em>presentation</em>. Raw game definitions
+                get transformed into JSON or database records with stable IDs. The frontend only cares about
+                rendering entities and links - not where the XML or extracted files originally lived.
+            </p>
+            <p>
+                When Ankama ships a patch, I update the source data, run the import scripts, verify a handful
+                of known items and monsters, and deploy. Community reports help catch edge cases - renamed items,
+                deprecated recipes, new resource nodes.
+            </p>
+
+            <h2>Frontend Experience</h2>
+            <p>
+                The UI is intentionally boring in a good way: search bar, filters, detail pages. Players don't
+                need flashy animations when they're trying to confirm whether a helmet requires level 110 or 115.
+            </p>
+            <p>
+                Detail pages group information by what players actually ask:
+            </p>
+            <ul>
+                <li>Stats and requirements for gear</li>
+                <li>Drop sources and locations for resources</li>
+                <li>Related recipes and crafting chains</li>
+                <li>Monster families and linked zones</li>
+            </ul>
+            <p>
+                Each section cross-links to other entities in the database so you can click through a crafting
+                chain without returning to search.
+            </p>
+
+            <h2>Performance Considerations</h2>
+            <p>
+                Encyclopedia sites can get slow when search scans huge JSON blobs on every keystroke. WakfuDB
+                uses indexed search - either pre-built indices or a lightweight server query - so results feel
+                instant even with thousands of entries.
+            </p>
+            <p>
+                Images and icons are cached aggressively. Most players revisit the same small set of items during
+                a session; cache headers and CDN delivery keep repeat loads snappy.
+            </p>
+
+            <h2>What I'd Do Differently</h2>
+            <p>
+                If I started over, I'd invest even earlier in automated patch diffing - scripts that compare
+                old and new data exports and flag changed IDs automatically. Manual verification doesn't scale
+                forever, especially when balance patches touch hundreds of items.
+            </p>
+            <p>
+                I'd also document the data schema publicly so contributors know how to propose fixes without
+                asking me first.
+            </p>
+
+            <h2>What's Next</h2>
+            <p>
+                Ongoing work includes better filter options, build planner experiments, and faster patch turnaround.
+                If you use WakfuDB regularly, the best way to help is reporting incorrect entries with specifics -
+                item name, what you expected, and what the game actually shows.
+            </p>
+
+            <p>
+                <a href="https://wakfudb.poofcakes.com" class="btn" target="_blank" rel="noopener">Open WakfuDB</a>
+                <a href="../projects/wakfudb.html" class="btn btn-secondary">Project Page</a>
+            </p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Poofcakes. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+            <a href="../privacy.html">Privacy Policy</a>
+            <a href="../terms.html">Terms of Use</a>
+        </div>
+    </footer>
+
+    <div class="footer-decoration" aria-hidden="true"></div>
+    <div id="snow-container" class="snow-container"></div>
+    <script src="../js/site.js"></script>
+</body>
+</html>
