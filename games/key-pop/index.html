@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Pop - 30 Second Typing Game | Poofcakes</title>
+    <meta name="description" content="Play Key Pop, a free 30-second browser typing game. Pop falling keycaps by typing letters, build combos, and beat your personal best. No download required.">
+    <link rel="canonical" href="https://poofcakes.com/games/key-pop/">
+    <meta property="og:title" content="Key Pop - Typing Game | Poofcakes">
+    <meta property="og:description" content="Type falling letters before they fade. 30-second typing sprint with combos.">
+    <meta property="og:url" content="https://poofcakes.com/games/key-pop/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1332697711513038" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button id="snow-toggle" class="snow-toggle" aria-label="Toggle sakura effect">
+        <span id="snow-toggle-text">Sakura 🌸</span>
+    </button>
+
+    <div class="container">
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/projects/">Projects</a>
+            <a href="/posts/">Blog Posts</a>
+            <a href="/games/" class="active">Mini Games</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+
+        <header class="header">
+            <h1>Key Pop</h1>
+            <p class="intro-text">A 30-second typing sprint. Pop keycaps before they fade and chase a higher combo.</p>
+        </header>
+
+        <div class="content-card">
+            <p class="game-breadcrumb"><a href="/games/">Mini Games</a> / Key Pop</p>
+            <h2>How to Play</h2>
+            <p>
+                Click <strong>Start Game</strong>, then type the letter shown on each falling keycap.
+                Every correct key earns a point. Miss a cap or type the wrong letter and your combo resets.
+            </p>
+            <p>
+                Every fifth combo in a row gives a small bonus. At the end of 30 seconds you will see your total pops
+                and an estimated keys-per-minute score. Your best run is saved in this browser automatically.
+            </p>
+            <h3>Tips</h3>
+            <ul>
+                <li>Keep your eyes on the newest caps near the top of the play area.</li>
+                <li>Prioritize caps that are about to fade rather than clearing old ones first.</li>
+                <li>A steady rhythm beats frantic mashing once combos start stacking.</li>
+            </ul>
+        </div>
+
+        <section class="mini-game-card game-page-card" aria-labelledby="keypop-title">
+            <div class="mini-game-copy">
+                <p class="eyebrow">Typing Challenge</p>
+                <h2 id="keypop-title">Play Key Pop</h2>
+                <div class="mini-game-actions">
+                    <button id="keypop-start" class="btn game-start-button" type="button">Start Game</button>
+                    <span id="keypop-status" class="mini-game-status" aria-live="polite">Click Start, then type the letters.</span>
+                </div>
+            </div>
+            <div class="mini-game-panel" aria-label="Key Pop game area">
+                <div class="mini-game-stats">
+                    <span>Score: <strong id="keypop-score">0</strong></span>
+                    <span>Combo: <strong id="keypop-combo">0</strong></span>
+                    <span>Time: <strong id="keypop-time">30</strong>s</span>
+                    <span>Best: <strong id="keypop-best">0</strong></span>
+                </div>
+                <div id="keypop-field" class="keypop-field" role="application" aria-label="Type the letters on the keycaps"></div>
+                <label class="keypop-input-label" for="keypop-input">Type here</label>
+                <input id="keypop-input" class="keypop-input" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Typing input for Key Pop" disabled>
+            </div>
+        </section>
+
+        <div class="content-card game-more-links">
+            <h2>More Mini Games</h2>
+            <p>
+                <a href="/games/catch-the-sakura/">Catch the Sakura</a> ·
+                <a href="/games/reaction-tap/">Reaction Tap</a> ·
+                <a href="/games/word-scramble/">Word Scramble</a> ·
+                <a href="/games/">All games</a>
+            </p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Poofcakes. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms of Use</a>
+        </div>
+    </footer>
+
+    <div class="footer-decoration" aria-hidden="true"></div>
+    <div id="snow-container" class="snow-container"></div>
+    <script src="/js/site.js"></script>
+    <script src="/js/games.js"></script>
+</body>
+</html>

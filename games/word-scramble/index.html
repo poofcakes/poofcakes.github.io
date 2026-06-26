@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Scramble - Gaming Word Puzzle | Poofcakes</title>
+    <meta name="description" content="Play Word Scramble, a free 45-second browser word puzzle with gaming-themed vocabulary. Unscramble as many words as you can and beat your best score.">
+    <link rel="canonical" href="https://poofcakes.com/games/word-scramble/">
+    <meta property="og:title" content="Word Scramble | Poofcakes">
+    <meta property="og:description" content="Unscramble gaming words against the clock.">
+    <meta property="og:url" content="https://poofcakes.com/games/word-scramble/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1332697711513038" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button id="snow-toggle" class="snow-toggle" aria-label="Toggle sakura effect">
+        <span id="snow-toggle-text">Sakura 🌸</span>
+    </button>
+
+    <div class="container">
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/projects/">Projects</a>
+            <a href="/posts/">Blog Posts</a>
+            <a href="/games/" class="active">Mini Games</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+
+        <header class="header">
+            <h1>Word Scramble</h1>
+            <p class="intro-text">Unscramble gaming words before the 45-second timer runs out.</p>
+        </header>
+
+        <div class="content-card">
+            <p class="game-breadcrumb"><a href="/games/">Mini Games</a> / Word Scramble</p>
+            <h2>How to Play</h2>
+            <p>
+                Press <strong>Start Game</strong> and read the scrambled letters on screen.
+                Type the correct word in the answer box. When your guess matches the full word, it counts automatically
+                and the next puzzle appears.
+            </p>
+            <p>
+                Words are gaming-themed: class roles, MMO slang, and titles from games Poofcakes covers.
+                You have 45 seconds to solve as many as possible. Your best total is saved in this browser.
+            </p>
+            <h3>Tips</h3>
+            <ul>
+                <li>Look for common suffixes like -ING or doubled letters that stand out.</li>
+                <li>Short words like LOOT and BOSS are free points if you spot them fast.</li>
+                <li>Press Enter to submit if auto-check does not trigger on your device.</li>
+            </ul>
+        </div>
+
+        <section class="mini-game-card game-page-card" aria-labelledby="scramble-title">
+            <div class="mini-game-copy">
+                <p class="eyebrow">Word Puzzle</p>
+                <h2 id="scramble-title">Play Word Scramble</h2>
+                <div class="mini-game-actions">
+                    <button id="scramble-start" class="btn game-start-button" type="button">Start Game</button>
+                    <span id="scramble-status" class="mini-game-status" aria-live="polite">Type the unscrambled word.</span>
+                </div>
+            </div>
+            <div class="mini-game-panel scramble-panel" aria-label="Word Scramble game area">
+                <div class="mini-game-stats">
+                    <span>Solved: <strong id="scramble-score">0</strong></span>
+                    <span>Time: <strong id="scramble-time">45</strong>s</span>
+                    <span>Best: <strong id="scramble-best">0</strong></span>
+                </div>
+                <p id="scramble-word" class="scramble-word" aria-live="polite">—</p>
+                <label class="scramble-input-label" for="scramble-input">Your answer</label>
+                <input id="scramble-input" class="scramble-input" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Word scramble answer" disabled>
+            </div>
+        </section>
+
+        <div class="content-card game-more-links">
+            <h2>More Mini Games</h2>
+            <p>
+                <a href="/games/key-pop/">Key Pop</a> ·
+                <a href="/games/catch-the-sakura/">Catch the Sakura</a> ·
+                <a href="/games/reaction-tap/">Reaction Tap</a> ·
+                <a href="/games/">All games</a>
+            </p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Poofcakes. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms of Use</a>
+        </div>
+    </footer>
+
+    <div class="footer-decoration" aria-hidden="true"></div>
+    <div id="snow-container" class="snow-container"></div>
+    <script src="/js/site.js"></script>
+    <script src="/js/games.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Sakura - Clicker Mini Game | Poofcakes</title>
+    <meta name="description" content="Catch the Sakura is a free 20-second browser clicker game. Click falling sakura petals before time runs out and beat your personal best score.">
+    <link rel="canonical" href="https://poofcakes.com/games/catch-the-sakura/">
+    <meta property="og:title" content="Catch the Sakura | Poofcakes">
+    <meta property="og:description" content="Click falling sakura petals in a 20-second reflex challenge.">
+    <meta property="og:url" content="https://poofcakes.com/games/catch-the-sakura/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1332697711513038" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button id="snow-toggle" class="snow-toggle" aria-label="Toggle sakura effect">
+        <span id="snow-toggle-text">Sakura 🌸</span>
+    </button>
+
+    <div class="container">
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/projects/">Projects</a>
+            <a href="/posts/">Blog Posts</a>
+            <a href="/games/" class="active">Mini Games</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+
+        <header class="header">
+            <h1>Catch the Sakura</h1>
+            <p class="intro-text">A cozy 20-second clicker. Grab as many falling petals as you can.</p>
+        </header>
+
+        <div class="content-card">
+            <p class="game-breadcrumb"><a href="/games/">Mini Games</a> / Catch the Sakura</p>
+            <h2>How to Play</h2>
+            <p>
+                Press <strong>Start Game</strong> and click sakura petals as they drift down the play area.
+                Each click counts as one point. Petals spawn continuously until the 20-second timer hits zero.
+            </p>
+            <p>
+                If a petal reaches the bottom without being clicked, it simply disappears. There is no penalty,
+                but you do lose a scoring chance. Your best score is saved locally in this browser.
+            </p>
+            <h3>Tips</h3>
+            <ul>
+                <li>Scan the full width of the field instead of locking onto one spot.</li>
+                <li>Click early on fast-falling petals near the top.</li>
+                <li>This game also appears on the <a href="/">homepage</a> for a quicker round.</li>
+            </ul>
+        </div>
+
+        <section class="mini-game-card game-page-card" aria-labelledby="sakura-game-title">
+            <div class="mini-game-copy">
+                <p class="eyebrow">Clicker</p>
+                <h2 id="sakura-game-title">Play Catch the Sakura</h2>
+                <div class="mini-game-actions">
+                    <button id="sakura-game-start" class="btn game-start-button" type="button">Start Game</button>
+                    <span id="sakura-game-status" class="mini-game-status" aria-live="polite">Ready when you are.</span>
+                </div>
+            </div>
+            <div class="mini-game-panel" aria-label="Catch the Sakura game area">
+                <div class="mini-game-stats">
+                    <span>Score: <strong id="sakura-game-score">0</strong></span>
+                    <span>Time: <strong id="sakura-game-time">20</strong>s</span>
+                    <span>Best: <strong id="sakura-game-best">0</strong></span>
+                </div>
+                <div id="sakura-game-field" class="sakura-game-field sakura-game-field-tall" role="application" aria-label="Click the falling sakura petals"></div>
+            </div>
+        </section>
+
+        <div class="content-card game-more-links">
+            <h2>More Mini Games</h2>
+            <p>
+                <a href="/games/key-pop/">Key Pop</a> ·
+                <a href="/games/reaction-tap/">Reaction Tap</a> ·
+                <a href="/games/word-scramble/">Word Scramble</a> ·
+                <a href="/games/">All games</a>
+            </p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Poofcakes. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms of Use</a>
+        </div>
+    </footer>
+
+    <div class="footer-decoration" aria-hidden="true"></div>
+    <div id="snow-container" class="snow-container"></div>
+    <script src="/js/site.js"></script>
+    <script src="/js/games.js"></script>
+</body>
+</html>

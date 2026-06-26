@@ -6,22 +6,22 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://poofcakes.com/about.html</loc>
+    <loc>https://poofcakes.com/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://poofcakes.com/contact.html</loc>
+    <loc>https://poofcakes.com/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://poofcakes.com/privacy.html</loc>
+    <loc>https://poofcakes.com/privacy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://poofcakes.com/terms.html</loc>
+    <loc>https://poofcakes.com/terms/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -31,22 +31,22 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://poofcakes.com/projects/bpsr-event-tracker.html</loc>
+    <loc>https://poofcakes.com/projects/bpsr-event-tracker/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://poofcakes.com/projects/wakfudb.html</loc>
+    <loc>https://poofcakes.com/projects/wakfudb/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://poofcakes.com/projects/wzbrowser.html</loc>
+    <loc>https://poofcakes.com/projects/wzbrowser/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://poofcakes.com/projects/pixels.html</loc>
+    <loc>https://poofcakes.com/projects/pixels/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -56,7 +56,32 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://poofcakes.com/posts/wakfu-beginners-guide.html</loc>
+    <loc>https://poofcakes.com/posts/wakfu-beginners-guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://poofcakes.com/games/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://poofcakes.com/games/key-pop/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://poofcakes.com/games/catch-the-sakura/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://poofcakes.com/games/reaction-tap/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://poofcakes.com/games/word-scramble/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

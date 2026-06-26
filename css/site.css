@@ -446,6 +446,206 @@ body::before {
     }
 }
 
+.games-intro,
+.games-footer-note,
+.game-more-links {
+    margin-bottom: 40px;
+}
+
+.game-breadcrumb {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #8B4A6B;
+    margin-bottom: 1rem;
+}
+
+.game-breadcrumb a {
+    color: inherit;
+}
+
+.game-hub-grid {
+    margin-bottom: 40px;
+}
+
+.game-hub-card .eyebrow {
+    margin-bottom: 6px;
+}
+
+.game-hub-card .project-title {
+    font-size: 1.75rem;
+}
+
+.game-page-card {
+    margin-bottom: 40px;
+}
+
+.sakura-game-field-tall {
+    min-height: 320px;
+}
+
+.sakura-game-field-tall .sakura-target {
+    animation-name: sakura-target-fall-tall;
+}
+
+@keyframes sakura-target-fall-tall {
+    to {
+        transform: translateY(340px) rotate(260deg);
+    }
+}
+
+.reaction-pad-tall {
+    min-height: 280px;
+}
+
+@media (min-width: 900px) {
+    .game-page-card {
+        grid-template-columns: minmax(0, 0.75fr) minmax(360px, 1.25fr);
+    }
+}
+
+.keypop-field {
+    position: relative;
+    flex: 1;
+    min-height: 200px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 240, 245, 0.5) 100%);
+}
+
+.keypop-cap {
+    position: absolute;
+    top: 12px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F0F0F0 55%, #D8D8D8 100%);
+    border: 3px solid #C8C8C8;
+    box-shadow:
+        0 5px 0 #B0B0B0,
+        0 8px 12px rgba(0, 0, 0, 0.15);
+    animation: keypop-drop 2.2s linear forwards;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.keypop-cap-letter {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    color: #2C3E50;
+}
+
+.keypop-cap-popped {
+    transform: scale(1.25);
+    opacity: 0;
+    background: linear-gradient(180deg, #FFD1DC 0%, #FFB6C1 100%);
+}
+
+.keypop-cap-missed {
+    opacity: 0;
+    transform: translateY(20px);
+    background: linear-gradient(180deg, #FFE4E1 0%, #FFC0CB 100%);
+}
+
+@keyframes keypop-drop {
+    to {
+        transform: translateY(170px);
+    }
+}
+
+.keypop-input-label,
+.scramble-input-label {
+    display: block;
+    padding: 8px 16px 0;
+    color: #8B4A6B;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.keypop-input,
+.scramble-input {
+    width: calc(100% - 32px);
+    margin: 6px 16px 14px;
+    padding: 12px 14px;
+    border: 3px solid #FFC0CB;
+    border-radius: 14px;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2C3E50;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.keypop-input:focus,
+.scramble-input:focus {
+    outline: 3px solid #DDA0DD;
+}
+
+.keypop-input:disabled,
+.scramble-input:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.reaction-pad {
+    flex: 1;
+    min-height: 200px;
+    margin: 0;
+    border: 0;
+    border-radius: 0 0 18px 18px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.6rem;
+    color: #2C3E50;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.reaction-pad-idle {
+    background: #F5F5F5;
+    cursor: default;
+}
+
+.reaction-pad-waiting {
+    background: #C0392B;
+    color: #FFFFFF;
+}
+
+.reaction-pad-ready {
+    background: #27AE60;
+    color: #FFFFFF;
+}
+
+.reaction-pad-false {
+    background: #E74C3C;
+    color: #FFFFFF;
+    cursor: default;
+}
+
+.reaction-pad-done {
+    background: #B0E0E6;
+    cursor: default;
+}
+
+.scramble-panel {
+    align-items: center;
+    text-align: center;
+}
+
+.scramble-word {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.4rem;
+    letter-spacing: 0.2em;
+    color: #2C3E50;
+    margin: 24px 16px 8px;
+    text-shadow: 2px 2px 0 #FFB6C1;
+}
+
+.scramble-input {
+    max-width: 320px;
+    text-align: center;
+    letter-spacing: 0.15em;
+}
+
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Tap - Reflex Test Game | Poofcakes</title>
+    <meta name="description" content="Test your reaction time with Reaction Tap. Wait for green, click fast, and track your best 5-round average. Free browser reflex game by Poofcakes.">
+    <link rel="canonical" href="https://poofcakes.com/games/reaction-tap/">
+    <meta property="og:title" content="Reaction Tap | Poofcakes">
+    <meta property="og:description" content="Classic reaction time test. Five rounds, no false starts.">
+    <meta property="og:url" content="https://poofcakes.com/games/reaction-tap/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1332697711513038" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button id="snow-toggle" class="snow-toggle" aria-label="Toggle sakura effect">
+        <span id="snow-toggle-text">Sakura 🌸</span>
+    </button>
+
+    <div class="container">
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/projects/">Projects</a>
+            <a href="/posts/">Blog Posts</a>
+            <a href="/games/" class="active">Mini Games</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+
+        <header class="header">
+            <h1>Reaction Tap</h1>
+            <p class="intro-text">Wait for green, then click. A simple five-round reflex benchmark.</p>
+        </header>
+
+        <div class="content-card">
+            <p class="game-breadcrumb"><a href="/games/">Mini Games</a> / Reaction Tap</p>
+            <h2>How to Play</h2>
+            <p>
+                Hit <strong>Start Game</strong>. The pad turns red and says "Wait for green." Do not click yet.
+                After a random delay, the pad turns green. Click immediately to record your reaction time in milliseconds.
+            </p>
+            <p>
+                You play five rounds per session. Your average across those five rounds is compared against your
+                stored personal best. Click too early on a red pad and you get a false start, ending that attempt.
+            </p>
+            <h3>What Is a Good Score?</h3>
+            <ul>
+                <li>Under 250 ms is sharp for most players on a desktop setup.</li>
+                <li>250 to 350 ms is very common and perfectly fine.</li>
+                <li>Mobile touch screens often run a little slower than mouse clicks.</li>
+            </ul>
+        </div>
+
+        <section class="mini-game-card game-page-card" aria-labelledby="reaction-title">
+            <div class="mini-game-copy">
+                <p class="eyebrow">Reflex Test</p>
+                <h2 id="reaction-title">Play Reaction Tap</h2>
+                <div class="mini-game-actions">
+                    <button id="reaction-start" class="btn game-start-button" type="button">Start Game</button>
+                    <span id="reaction-status" class="mini-game-status" aria-live="polite">Wait for green. Do not click early.</span>
+                </div>
+            </div>
+            <div class="mini-game-panel" aria-label="Reaction Tap game area">
+                <div class="mini-game-stats">
+                    <span>Round: <strong id="reaction-round">0/5</strong></span>
+                    <span>Last: <strong id="reaction-result">—</strong></span>
+                    <span>Best avg: <strong id="reaction-best">—</strong></span>
+                </div>
+                <button id="reaction-pad" class="reaction-pad reaction-pad-idle reaction-pad-tall" type="button" aria-label="Reaction tap area. Click when green.">
+                    Press Start to begin
+                </button>
+            </div>
+        </section>
+
+        <div class="content-card game-more-links">
+            <h2>More Mini Games</h2>
+            <p>
+                <a href="/games/key-pop/">Key Pop</a> ·
+                <a href="/games/catch-the-sakura/">Catch the Sakura</a> ·
+                <a href="/games/word-scramble/">Word Scramble</a> ·
+                <a href="/games/">All games</a>
+            </p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Poofcakes. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms of Use</a>
+        </div>
+    </footer>
+
+    <div class="footer-decoration" aria-hidden="true"></div>
+    <div id="snow-container" class="snow-container"></div>
+    <script src="/js/site.js"></script>
+    <script src="/js/games.js"></script>
+</body>
+</html>

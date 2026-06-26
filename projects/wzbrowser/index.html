@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wzbrowser - Poofcakes</title>
+    <meta name="description" content="wzbrowser lets you open MapleStory WZ files in your browser, decode them locally, and export XML and PNG assets without uploading files.">
+    <link rel="canonical" href="https://poofcakes.com/projects/wzbrowser/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1332697711513038" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button id="snow-toggle" class="snow-toggle" aria-label="Toggle sakura effect">
+        <span id="snow-toggle-text">Sakura 🌸</span>
+    </button>
+
+    <div class="container">
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/projects/" class="active">Projects</a>
+            <a href="/posts/">Blog Posts</a>
+            <a href="/games/">Mini Games</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+
+        <header class="header">
+            <h1>wzbrowser</h1>
+            <p class="intro-text">Browse MapleStory WZ files entirely in your browser.</p>
+        </header>
+
+        <div class="content-card">
+            <p>
+                <a href="https://wzbrowser.poofcakes.com/" class="btn" target="_blank" rel="noopener">Launch wzbrowser</a>
+            </p>
+
+            <h2>What It Does</h2>
+            <p>
+                MapleStory stores much of its game data in WZ archive files. Traditionally you needed desktop tools
+                to open them. wzbrowser brings that workflow to the browser: load a WZ file from your computer,
+                explore its contents in a tree view, preview images on a canvas, and export what you need.
+            </p>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Local-only processing</strong> - files never leave your machine</li>
+                <li><strong>WZ decoding in the browser</strong> - no install or server upload</li>
+                <li><strong>XML export</strong> - pull structured data from nodes</li>
+                <li><strong>PNG export</strong> - save sprites and images directly</li>
+                <li><strong>Canvas preview</strong> - inspect graphics before exporting</li>
+            </ul>
+
+            <h2>Who It's For</h2>
+            <p>
+                Modders, dataminers, artists referencing sprites, and curious players who want to understand how
+                MapleStory packages its assets. Because everything runs client-side, it's also a safer option when
+                you don't want to upload proprietary game files anywhere.
+            </p>
+
+            <h2>How to Use It</h2>
+            <ol>
+                <li><strong>Open wzbrowser</strong> - click Launch wzbrowser above. It runs entirely in your browser.</li>
+                <li><strong>Load a WZ file</strong> - choose a .wz file from your local MapleStory installation. The file is read in place and never uploaded.</li>
+                <li><strong>Explore the tree</strong> - browse the archive's node structure in the tree view to find sprites, sounds, and property data.</li>
+                <li><strong>Preview assets</strong> - click an image node to render it on the canvas before you decide to export.</li>
+                <li><strong>Export what you need</strong> - save individual images as PNG or pull structured node data as XML.</li>
+            </ol>
+            <p>
+                Since decoding happens client-side, large archives stay on your machine and nothing about your files is sent
+                anywhere.
+            </p>
+
+            <h2>FAQ</h2>
+            <h3>Where do I get WZ files?</h3>
+            <p>
+                WZ files come from your local MapleStory installation. You are responsible for complying with
+                the game's terms of service when extracting or using game assets.
+            </p>
+            <h3>Are my files uploaded?</h3>
+            <p>
+                No. wzbrowser decodes files entirely in your browser using JavaScript. Nothing is sent to a server.
+            </p>
+            <h3>What formats are supported?</h3>
+            <p>
+                The tool focuses on standard MapleStory WZ structures. Some encrypted or version-specific files
+                may require updates as the game patches.
+            </p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Poofcakes. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms of Use</a>
+        </div>
+    </footer>
+
+    <div class="footer-decoration" aria-hidden="true"></div>
+    <div id="snow-container" class="snow-container"></div>
+    <script src="/js/site.js"></script>
+</body>
+</html>
