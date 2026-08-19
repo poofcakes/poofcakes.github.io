@@ -3,218 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poofcakes - Game Tools, Dev Projects & Blog Posts</title>
-    <meta name="description" content="Poofcakes builds free browser-based game tools, databases, and trackers for Wakfu, Blue Protocol, MapleStory, and more. Blog posts, dev logs, and project updates.">
+    <title>Poofcakes - Game Tools & Dev Projects</title>
+    <meta name="description" content="Poofcakes builds free browser-based game tools, databases, and trackers for Wakfu, Blue Protocol, MapleStory, and more.">
     <link rel="canonical" href="https://poofcakes.com/">
     <meta property="og:title" content="Poofcakes - Game Tools & Dev Projects">
-    <meta property="og:description" content="Free game tools, databases, trackers, and blog posts built by Poofcakes.">
+    <meta property="og:description" content="Free game tools, databases, and trackers built by Poofcakes.">
     <meta property="og:url" content="https://poofcakes.com/">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/site.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1332697711513038" crossorigin="anonymous"></script>
 </head>
 <body>
-    <button id="snow-toggle" class="snow-toggle" aria-label="Toggle sakura effect">
-        <span id="snow-toggle-text">Sakura 🌸</span>
-    </button>
 
     <div class="container">
         <nav class="site-nav" aria-label="Main navigation">
             <a href="/" class="active">Home</a>
-            <a href="/about/">About</a>
             <a href="/projects/">Projects</a>
-            <a href="/posts/">Blog Posts</a>
             <a href="/games/">Mini Games</a>
-            <a href="/contact/">Contact</a>
         </nav>
 
-        <header class="header">
-            <h1><a href="/">Poofcakes</a> <img src="/poofhead.gif" alt="Poofcakes mascot" class="poofhead"></h1>
-            <p class="intro-text">
-                Welcome! I'm Poofcakes - a developer and content creator who builds free browser-based tools for games I love.
-                This site hosts my projects, blog posts, and dev notes for Wakfu, Blue Protocol, MapleStory, and more.
-            </p>
-            <div class="social-links">
-                <a href="https://www.twitch.tv/poofcakes" class="social-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-twitch"></i> Twitch
-                </a>
-                <a href="https://steamcommunity.com/id/poofcakes" class="social-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-steam"></i> Steam
-                </a>
-                <a href="https://www.youtube.com/@poofcakes1" class="social-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-youtube"></i> YouTube
-                </a>
-                <a href="https://discord.gg/DrB9GYM" class="social-link discord-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-discord"></i> Join Poof's Little Corner Discord
-                </a>
+        <header class="header header--home">
+            <div class="hero-card">
+                <div class="hero-card-intro">
+                    <p class="intro-text">
+                        Welcome! I'm Poofcakes, a developer and content creator who builds free browser-based tools for games I love.
+                        Most of them started the same way: I noticed something missing while playing, some tracker or database
+                        I wished already existed, and figured I could just build it myself. Jump straight to
+                        <a href="/projects/">Projects</a>.
+                    </p>
+                    <div class="hero-socials" aria-label="Social links">
+                        <a href="https://www.twitch.tv/poofcakes" class="hero-social-link" aria-label="Twitch" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitch"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@poofcakes1" class="hero-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://steamcommunity.com/id/poofcakes" class="hero-social-link" aria-label="Steam" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-steam"></i>
+                        </a>
+                        <a href="https://www.instagram.com/poofcakes" class="hero-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.reddit.com/user/Poofcakes/" class="hero-social-link" aria-label="Reddit" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-reddit"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-card-discord" id="discord" aria-labelledby="discord-heading">
+                    <div class="discord-callout-copy">
+                        <h2 id="discord-heading">Join my Discord!</h2>
+                        <p>
+                            It's genuinely the best way to reach me, and I'd love to build a little community. Come hang out,
+                            or just tell me what's broken. I read everything.
+                        </p>
+                    </div>
+                    <a href="https://discord.gg/DrB9GYM" class="btn discord-callout-button" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-discord"></i> Join Discord
+                    </a>
+                </div>
             </div>
         </header>
 
-        <section class="discord-callout" aria-labelledby="discord-callout-title">
-            <div>
-                <p class="eyebrow">Community</p>
-                <h2 id="discord-callout-title">Join Poof's Little Corner Discord</h2>
-                <p>
-                    Hang out, ask questions, share project feedback, and get updates on game tools and blog posts.
+        <section class="timeline-section" aria-labelledby="timeline-heading">
+            <h1 class="section-title section-title-with-mascot" id="timeline-heading">
+                <span>a little summary of me</span>
+                <img src="/poofhead.gif" alt="Poofcakes mascot" class="poofhead poofhead--section">
+            </h1>
+
+            <div class="timeline-wrap">
+                <ul class="timeline-legend" aria-label="Timeline entry types">
+                    <li><span class="timeline-legend-dot timeline-legend-dot--school"></span> Academics</li>
+                    <li><span class="timeline-legend-dot timeline-legend-dot--project"></span> Web projects</li>
+                    <li><span class="timeline-legend-dot timeline-legend-dot--capsule"></span> Time capsule</li>
+                </ul>
+
+                <div class="chrono-timeline" aria-label="Timeline from 2014 to 2027">
+                    <div class="chrono-lane chrono-lane--edu" aria-label="Education">
+                        <div class="chrono-edu-span chrono-edu-span--postdoc">
+                            <span class="chrono-edu-dates">2026 – Present</span>
+                            <span class="chrono-edu-label">Postdoc</span>
+                            <span class="chrono-edu-note">Now I'm 30 and old and grey.</span>
+                        </div>
+                        <div class="chrono-edu-span chrono-edu-span--phd">
+                            <span class="chrono-edu-dates">2023 – 2026</span>
+                            <span class="chrono-edu-label">PhD</span>
+                            <span class="chrono-edu-note">Research focused on human genetics and immunity.</span>
+                        </div>
+                        <div class="chrono-edu-span chrono-edu-span--master">
+                            <span class="chrono-edu-dates">2020 – 2023</span>
+                            <span class="chrono-edu-label">Master's</span>
+                            <span class="chrono-edu-note">COVID-era grad school, focused on machine and deep learning.</span>
+                        </div>
+                        <div class="chrono-edu-span chrono-edu-span--job">
+                            <span class="chrono-edu-dates">2018 – 2020</span>
+                            <span class="chrono-edu-label">a job in genetics</span>
+                        </div>
+                        <div class="chrono-edu-span chrono-edu-span--bachelor">
+                            <span class="chrono-edu-dates">2014 – 2018</span>
+                            <span class="chrono-edu-label">Bachelor's</span>
+                            <span class="chrono-edu-note">This is when the coding world opened up for me, and I learned languages such as Python, R and Java.</span>
+                        </div>
+                    </div>
+
+                    <div class="chrono-axis" aria-hidden="true">
+                        <span class="chrono-year-label chrono-year-label--2027">2027</span>
+                        <span class="chrono-year-label chrono-year-label--2026">2026</span>
+                        <span class="chrono-year-label chrono-year-label--2025">2025</span>
+                        <span class="chrono-year-label chrono-year-label--2024">2024</span>
+                        <span class="chrono-year-label chrono-year-label--2023">2023</span>
+                        <span class="chrono-year-label chrono-year-label--2022">2022</span>
+                        <span class="chrono-year-label chrono-year-label--2021">2021</span>
+                        <span class="chrono-year-label chrono-year-label--2020">2020</span>
+                        <span class="chrono-year-label chrono-year-label--2019">2019</span>
+                        <span class="chrono-year-label chrono-year-label--2018">2018</span>
+                        <span class="chrono-year-label chrono-year-label--2017">2017</span>
+                        <span class="chrono-year-label chrono-year-label--2016">2016</span>
+                        <span class="chrono-year-label chrono-year-label--2015">2015</span>
+                        <span class="chrono-year-label chrono-year-label--2014">2014</span>
+                    </div>
+
+                    <div class="chrono-lane chrono-lane--events" aria-label="Projects and time capsule">
+                        <article class="chrono-event chrono-event--project chrono-event--archived" style="--ty: var(--t2025); --slot: 2">
+                            <span class="vtimeline-archived-badge">Archived</span>
+                            <p class="chrono-event-meta"><span class="chrono-event-dates">Dec 2025 – Jul 2026</span></p>
+                            <h3 class="chrono-event-title">
+                                <a href="https://bpevents.poofcakes.com/" target="_blank" rel="noopener noreferrer">BP:SR Event Tracker</a>
+                            </h3>
+                            <p class="chrono-event-desc">Event schedules for Blue Protocol: Star Resonance. Still online, no longer updated.</p>
+                        </article>
+
+                        <article class="chrono-event chrono-event--project" style="--ty: var(--t2026); --slot: 0">
+                            <p class="chrono-event-meta"><span class="chrono-event-dates">Aug 2026</span></p>
+                            <h3 class="chrono-event-title">
+                                <a href="https://sr-gifts.poofcakes.com/" target="_blank" rel="noopener noreferrer">Soul's Remnant NPC Gifts Guide</a>
+                            </h3>
+                            <p class="chrono-event-desc">Crowdsourced villager gift preferences for Soul's Remnant.</p>
+                        </article>
+
+                        <article class="chrono-event chrono-event--project" style="--ty: var(--t2026); --slot: 1">
+                            <p class="chrono-event-meta"><span class="chrono-event-dates">June 2026</span></p>
+                            <h3 class="chrono-event-title">
+                                <a href="https://pixels.poofcakes.com/" target="_blank" rel="noopener noreferrer">poofpixels</a>
+                            </h3>
+                            <p class="chrono-event-desc">Fuse bead craft brand and pattern generator.</p>
+                        </article>
+                        <article class="chrono-event chrono-event--project" style="--ty: var(--t2026); --slot: 2">
+                            <p class="chrono-event-meta"><span class="chrono-event-dates">Apr 2026</span></p>
+                            <h3 class="chrono-event-title">
+                                <a href="https://wzbrowser.poofcakes.com/" target="_blank" rel="noopener noreferrer">wzbrowser</a>
+                            </h3>
+                            <p class="chrono-event-desc">Browse MapleStory WZ files locally in the browser.</p>
+                        </article>
+
+                        <article class="chrono-event chrono-event--project" style="--ty: var(--t2025); --slot: 3">
+                            <p class="chrono-event-meta"><span class="chrono-event-dates">Aug 2025</span></p>
+                            <h3 class="chrono-event-title">
+                                <a href="https://wakfudb.poofcakes.com" target="_blank" rel="noopener noreferrer">WakfuDB</a>
+                            </h3>
+                            <p class="chrono-event-desc">Searchable Wakfu encyclopedia for items, monsters, and crafting.</p>
+                        </article>
+
+                        <article class="chrono-event chrono-event--capsule" style="--ty: var(--t2019); --slot: 0">
+                            <p class="chrono-event-meta"><span class="chrono-event-dates">Circa 2018–2019</span> <span class="vtimeline-archive-badge">Web Archive</span></p>
+                            <h3 class="chrono-event-title">
+                                <a href="https://web.archive.org/web/20191101010153/https://mapleunity.com/" target="_blank" rel="noopener noreferrer">mapleunity.com</a>
+                            </h3>
+                            <p class="chrono-event-desc">Not a webtool, just a v62 GMS MapleStory private server. ❤️</p>
+                            <a href="https://web.archive.org/web/20191101010153/https://mapleunity.com/" class="vtimeline-archive-link" target="_blank" rel="noopener noreferrer">Wayback Machine</a>
+                        </article>
+
+                        <article class="chrono-event chrono-event--capsule" style="--ty: var(--t2018); --slot: 0">
+                            <p class="chrono-event-meta"><span class="chrono-event-dates">Circa 2017–2018</span> <span class="vtimeline-archive-badge">Web Archive</span></p>
+                            <h3 class="chrono-event-title">
+                                <a href="https://web.archive.org/web/20180919222255/https://poof.ml/" target="_blank" rel="noopener noreferrer">poof.ml</a>
+                            </h3>
+                            <p class="chrono-event-desc">A MapleLegends library frozen in amber. The shitty PHP site that started all the other ones, and was the inspiration for this current page's looks.</p>
+                            <a href="https://web.archive.org/web/20180919222255/https://poof.ml/" class="vtimeline-archive-link" target="_blank" rel="noopener noreferrer">Wayback Machine</a>
+                        </article>
+                    </div>
+                </div>
+
+                <p class="timeline-cta">
+                    <a href="/projects/" class="btn">View All Projects</a>
                 </p>
             </div>
-            <a href="https://discord.gg/DrB9GYM" class="btn discord-callout-button" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-discord"></i> Join Poof's Little Corner Discord
-            </a>
         </section>
 
-        <section class="mini-game-card" aria-labelledby="mini-game-title">
-            <div class="mini-game-copy">
-                <p class="eyebrow">Tiny Break</p>
-                <h2 id="mini-game-title">Catch the Sakura</h2>
-                <p>
-                    Click as many falling petals as you can before the timer runs out.
-                    Your best score stays on this browser. Want more? Try
-                    <a href="/games/key-pop/">Key Pop</a>, <a href="/games/reaction-tap/">Reaction Tap</a>,
-                    and <a href="/games/">more mini games</a>.
-                </p>
-                <div class="mini-game-actions">
-                    <button id="sakura-game-start" class="btn game-start-button" type="button">Start Game</button>
-                    <a href="/games/" class="btn btn-secondary">All Mini Games</a>
-                    <span id="sakura-game-status" class="mini-game-status" aria-live="polite">Ready when you are.</span>
+        <section class="home-faq" aria-labelledby="faq-heading">
+            <div class="faq-wrap">
+                <h2 class="faq-title" id="faq-heading">Q&amp;A</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>What does Poofcakes mean?</summary>
+                        <p>I literally used a random name generator when I was like 14, and that's what I've stuck with since then. 😅</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Is this your full-time job?</summary>
+                        <p>Nope. I'm a bioinformatics researcher by day. The game tools are a hobby I build in my spare time because I wanted them to exist. 😊</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can I request a tool or report a bug?</summary>
+                        <p>Yes please. 🙏 <a href="https://discord.gg/DrB9GYM" target="_blank" rel="noopener noreferrer">Discord</a> is the best place for that. I read everything. 🙂</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do your tools upload my files or data?</summary>
+                        <p>Where I can help it, no. Most tools run in your browser and keep things on your machine. If a project works differently, its page says so. 😌</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Are these tools free?</summary>
+                        <p>Yes. No paywalls, no ads, no account required for the browser tools. 😊 Tips are always welcome on <a href="https://ko-fi.com/poofcakes" target="_blank" rel="noopener noreferrer">Ko-fi</a> if you want to support the work. I put a lot of time into some of these tools. 🥰</p>
+                    </details>
                 </div>
-            </div>
-            <div class="mini-game-panel" aria-label="Catch the Sakura game area">
-                <div class="mini-game-stats">
-                    <span>Score: <strong id="sakura-game-score">0</strong></span>
-                    <span>Time: <strong id="sakura-game-time">20</strong>s</span>
-                    <span>Best: <strong id="sakura-game-best">0</strong></span>
-                </div>
-                <div id="sakura-game-field" class="sakura-game-field" role="application" aria-label="Click the falling sakura petals"></div>
             </div>
         </section>
-
-        <h2 class="section-title">✨ Dev Projects ✨</h2>
-
-        <div class="projects">
-            <div class="project-card">
-                <h2 class="project-title">BP:SR Event Tracker</h2>
-                <p class="project-description">
-                    Track daily, weekly, and monthly events in Blue Protocol: Star Resonance with real-time countdowns and visual timelines.
-                </p>
-                <a href="https://bpevents.poofcakes.com/" class="project-link" target="_blank" rel="noopener">
-                    <i data-lucide="external-link" class="icon"></i> Launch App
-                </a>
-                <a href="/projects/bpsr-event-tracker/" class="project-link btn-secondary">
-                    <i data-lucide="book-open" class="icon"></i> Learn More
-                </a>
-                <div class="project-features">
-                    <h3>Key Features</h3>
-                    <ul>
-                        <li>Daily, Weekly & Monthly Event Tracking</li>
-                        <li>Real-time Reset Timers</li>
-                        <li>Interactive Timeline Visualizations</li>
-                        <li>Dark Mode & Responsive Design</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h2 class="project-title">WakfuDB</h2>
-                <p class="project-description">
-                    A comprehensive encyclopedia for Wakfu players - items, monsters, resources, and crafting references in one searchable database.
-                </p>
-                <a href="https://wakfudb.poofcakes.com" class="project-link" target="_blank" rel="noopener noreferrer">
-                    <i data-lucide="external-link" class="icon"></i> Launch App
-                </a>
-                <a href="/projects/wakfudb/" class="project-link btn-secondary">
-                    <i data-lucide="book-open" class="icon"></i> Learn More
-                </a>
-                <div class="project-features">
-                    <h3>Key Features</h3>
-                    <ul>
-                        <li>Wakfu Item & Equipment Database</li>
-                        <li>Monster, Resource & Crafting References</li>
-                        <li>Player-friendly Search & Browsing</li>
-                        <li>Responsive Encyclopedia Layout</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h2 class="project-title">wzbrowser</h2>
-                <p class="project-description">
-                    Browse MapleStory WZ files in your browser. Load files locally, decode them client-side, and export assets without uploading anything.
-                </p>
-                <a href="https://wzbrowser.poofcakes.com/" class="project-link" target="_blank" rel="noopener noreferrer">
-                    <i data-lucide="external-link" class="icon"></i> Launch App
-                </a>
-                <a href="/projects/wzbrowser/" class="project-link btn-secondary">
-                    <i data-lucide="book-open" class="icon"></i> Learn More
-                </a>
-                <div class="project-features">
-                    <h3>Key Features</h3>
-                    <ul>
-                        <li>In-browser WZ File Decoding</li>
-                        <li>XML & PNG Asset Export</li>
-                        <li>Canvas Preview Support</li>
-                        <li>No File Uploads Required</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h2 class="project-title">Pixels</h2>
-                <p class="project-description">
-                    A fuse bead pixel pattern generator for turning pixel art ideas into bead-ready craft patterns.
-                </p>
-                <a href="https://pixels.poofcakes.com/" class="project-link" target="_blank" rel="noopener noreferrer">
-                    <i data-lucide="external-link" class="icon"></i> Launch App
-                </a>
-                <a href="/projects/pixels/" class="project-link btn-secondary">
-                    <i data-lucide="book-open" class="icon"></i> Learn More
-                </a>
-                <div class="project-features">
-                    <h3>Key Features</h3>
-                    <ul>
-                        <li>Fuse Bead Pattern Generation</li>
-                        <li>Pixel Art Craft Planning</li>
-                        <li>Pattern-friendly Output</li>
-                        <li>Browser-based Workflow</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="section-title">📖 Latest Blog Posts</h2>
-
-        <div class="content-card">
-            <ul class="post-list">
-                <li>
-                    <a href="/posts/wakfu-beginners-guide/">Wakfu Beginner's Guide: What New Players Should Know</a>
-                    <p class="post-meta">Getting started with classes, resources, and useful community tools.</p>
-                </li>
-            </ul>
-            <p style="margin-top: 1.5rem; margin-bottom: 0;">
-                <a href="/posts/" class="btn">View All Blog Posts</a>
-            </p>
-        </div>
     </div>
 
     <footer class="site-footer">
         <p>&copy; 2026 Poofcakes. All rights reserved.</p>
         <div class="footer-links">
-            <a href="/about/">About</a>
-            <a href="/contact/">Contact</a>
             <a href="/privacy/">Privacy Policy</a>
             <a href="/terms/">Terms of Use</a>
         </div>
     </footer>
 
     <div class="footer-decoration" aria-hidden="true"></div>
-    <div id="snow-container" class="snow-container"></div>
     <script src="/js/site.js"></script>
-    <script src="/js/games.js"></script>
 </body>
 </html>
